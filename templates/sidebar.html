@@ -1,0 +1,78 @@
+<!-- Sidebar -->
+<div class="sidebar">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="height: 100vh; position: fixed; width: 250px; background: linear-gradient(180deg, #0f172a, #1e293b);">
+        <div class="container-fluid flex-column align-items-start">
+
+            <!-- Logo -->
+            <a class="navbar-brand mb-4" href="#">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Logo" width="30">
+            </a>
+
+            <!-- Botón de toggle para responsive -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú -->
+            <div class="collapse navbar-collapse show w-100" id="sidebarMenu">
+                <ul class="navbar-nav flex-column w-100">
+                    <li class="nav-item mb-2">
+                        <a class="nav-link text-white d-flex align-items-center gap-2" href="{{ url_for('upload_file') }}">
+                            <i class="bi bi-upload"></i> Subir archivo
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a class="nav-link text-white d-flex align-items-center gap-2" href="{{ url_for('history') }}">
+                            <i class="bi bi-clock-history"></i> Historial de registros subidos
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!-- Área de contenido -->
+<div class="content">
+    <!-- Tu contenido principal va aquí -->
+</div>
+
+<!-- Estilos -->
+<style>
+    .sidebar {
+        margin-left: 0;
+    }
+    .content {
+        margin-left: 250px;
+        padding: 20px;
+        transition: margin-left 0.3s;
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            position: static;
+            width: 100%;
+            height: auto;
+        }
+        .content {
+            margin-left: 0;
+        }
+    }
+
+    .nav-link:hover {
+        background-color: #475569;
+        border-radius: 6px;
+    }
+
+    .nav-link.active {
+        background-color: #334155;
+        border-radius: 6px;
+    }
+
+    .nav-link i {
+        font-size: 1.2rem;
+    }
+</style>
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
